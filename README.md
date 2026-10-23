@@ -2,7 +2,7 @@
 
 PayU gateway for [Payum](https://github.com/Payum/Payum), built on the PayU REST API 2.1.
 
-[![CI](https://github.com/payum-payu/payum-payu/actions/workflows/ci.yml/badge.svg)](https://github.com/payum-payu/payum-payu/actions/workflows/ci.yml)
+[![CI](https://github.com/seriyyah/payum-payu/actions/workflows/ci.yml/badge.svg)](https://github.com/seriyyah/payum-payu/actions/workflows/ci.yml)
 [![Packagist](https://img.shields.io/packagist/v/payum-payu/payum-payu.svg)](https://packagist.org/packages/payum-payu/payum-payu)
 [![PHP](https://img.shields.io/packagist/php-v/payum-payu/payum-payu.svg)](composer.json)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
@@ -91,6 +91,6 @@ Supported PHP versions follow the official PHP support schedule. Security issues
 
 ## Credits and license
 
-Created and maintained by [Serhii Puzikov](https://github.com/puzikov). Released under the [MIT license](LICENSE): use it, fork it,
+Created and maintained by [Serhii Puzikov](https://github.com/seriyyah). Released under the [MIT license](LICENSE): use it, fork it,
 change it, ship it in commercial products; keep the copyright notice. This package is not affiliated with PayU S.A. or
 the Payum project.

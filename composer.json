@@ -18,7 +18,12 @@
             "role": "Creator"
         }
     ],
-    "homepage": "https://github.com/payum-payu/payum-payu",
+    "homepage": "https://github.com/seriyyah/payum-payu",
+    "support": {
+        "issues": "https://github.com/seriyyah/payum-payu/issues",
+        "source": "https://github.com/seriyyah/payum-payu",
+        "docs": "https://github.com/seriyyah/payum-payu/tree/main/docs"
+    },
     "require": {
         "php": "^8.2",
         "ext-json": "*",
@@ -79,6 +84,11 @@
         },
         "sort-packages": true
     },
+    "extra": {
+        "branch-alias": {
+            "dev-dev": "1.x-dev"
+        }
+    },
     "scripts": {
         "check": [
             "@cs",
@@ -115,10 +125,5 @@
         "ci": "Everything the CI pipeline runs, including coverage gate and mutation testing",
         "coverage": "Tests with coverage reports, fails below 100 percent (needs Xdebug or pcov)",
         "mutation": "Mutation testing with Infection"
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-dev": "1.x-dev"
-        }
     }
 }
