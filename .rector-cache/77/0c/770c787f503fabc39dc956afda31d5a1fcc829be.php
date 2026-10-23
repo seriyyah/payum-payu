@@ -398,8 +398,9 @@ return \Rector\Caching\ValueObject\CacheItem::__set_state(array(
     ),
     'skip' => 
     array (
-      0 => '238c63960db3d1991512ed14f9ff3c8f88172b7f',
-      1 => '95f81c11dcd6d4bc27055b7efb5156a7d2ab0f84',
+      0 => '34fdb84509fdc22d7f80ec311f0d81e8d1def8ff',
+      1 => '238c63960db3d1991512ed14f9ff3c8f88172b7f',
+      2 => '95f81c11dcd6d4bc27055b7efb5156a7d2ab0f84',
     ),
   ),
 ));

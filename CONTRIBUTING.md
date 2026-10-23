@@ -13,20 +13,20 @@ Thank you for considering a contribution.
 | Branch | Purpose | Composer constraint |
 | --- | --- | --- |
 | `main` | released code; every commit on it is tagged | `^1.0` (tags) or `dev-main` |
-| `dev` | integration branch for the next release | `1.x-dev` (branch alias) or `dev-dev` |
+| `develop` | integration branch for the next release | `1.x-dev` (branch alias) or `dev-develop` |
 
-Pull requests target **`dev`**. `main` only receives merges from `dev` when a release is cut.
+Pull requests target **`develop`**. `main` only receives merges from `develop` when a release is cut.
 
 ## Pull requests
 
-1. Fork the repository and create a branch from `dev` (for a hotfix to a released version, branch from `main`
+1. Fork the repository and create a branch from `develop` (for a hotfix to a released version, branch from `main`
    and say so in the PR).
 2. Write the change together with its tests. New behaviour needs a test that fails without the change.
 3. Run `composer ci` locally (or `docker compose run --rm php composer ci`). The pipeline enforces PSR-12 +
    Slevomat style, PHPStan level 10, 100% coverage and a 100% mutation score; a PR that lowers any of these needs
    a written reason in its description.
 4. Add a line to `CHANGELOG.md` under *Unreleased*.
-5. Open the PR against `dev`. Keep it focused; unrelated refactoring goes in its own PR.
+5. Open the PR against `develop`. Keep it focused; unrelated refactoring goes in its own PR.
 
 ## Versioning and releases
 
@@ -46,8 +46,8 @@ Release steps (maintainers):
 
 1. Move the *Unreleased* changelog entries under the new version and date, update the `branch-alias` in
    `composer.json` when starting a new major line.
-2. Merge `dev` into `main`, tag `vX.Y.Z` on `main`, push the tag. Packagist picks it up through the GitHub hook.
-3. Merge `main` back into `dev`.
+2. Merge `develop` into `main`, tag `vX.Y.Z` on `main`, push the tag. Packagist picks it up through the GitHub hook.
+3. Merge `main` back into `develop`.
 
 ## Coding guidelines
 
