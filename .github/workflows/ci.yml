@@ -18,7 +18,7 @@ jobs:
     name: Style, static analysis, dependencies
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.4'
@@ -45,7 +45,7 @@ jobs:
           - php: '8.2'
             dependencies: lowest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
@@ -59,7 +59,7 @@ jobs:
     name: Coverage gate and mutation testing
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.4'
