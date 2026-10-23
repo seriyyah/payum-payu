@@ -49,5 +49,5 @@ SONAR_TOKEN=... docker compose --profile sonar run --rm sonar-scanner
 
 ## Branches and releases
 
-Work lands on `dev`; `main` holds released, tagged code. The release checklist and the semantic versioning rules
+Work lands on `develop`; `main` holds released, tagged code. The release checklist and the semantic versioning rules
 are in [CONTRIBUTING.md](../CONTRIBUTING.md).

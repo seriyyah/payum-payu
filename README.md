@@ -26,7 +26,7 @@ PayU gateway for [Payum](https://github.com/Payum/Payum), built on the PayU REST
 composer require payum-payu/payum-payu
 ```
 
-Releases are tagged from `main`; the next release is prepared on `dev`, installable as `1.x-dev`:
+Releases are tagged from `main`; the next release is prepared on `develop`, installable as `1.x-dev`:
 
 ```bash
 composer require payum-payu/payum-payu:1.x-dev

@@ -61,6 +61,8 @@ final class PayumPayUBundleTest extends TestCase
     private function load(PayumPayUBundle $bundle): ContainerBuilder
     {
         $container = new ContainerBuilder();
+        $container->setParameter('kernel.environment', 'test');
+        $container->setParameter('kernel.debug', true);
         $container->register('request_stack', RequestStack::class);
         $extension = $bundle->getContainerExtension();
         self::assertNotNull($extension);
