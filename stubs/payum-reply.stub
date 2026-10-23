@@ -1,0 +1,52 @@
+<?php
+
+namespace Payum\Core\Reply;
+
+interface ReplyInterface extends \Throwable
+{
+}
+
+class HttpResponse
+{
+    /**
+     * @param string $content
+     * @param int $statusCode
+     * @param array<string, string> $headers
+     */
+    public function __construct($content, $statusCode = 200, array $headers = [])
+    {
+    }
+
+    /**
+     * @return string
+     */
+    public function getContent()
+    {
+    }
+
+    /**
+     * @return int
+     */
+    public function getStatusCode()
+    {
+    }
+}
+
+class HttpRedirect
+{
+    /**
+     * @param string $url
+     * @param int $statusCode
+     * @param array<string, string> $headers
+     */
+    public function __construct($url, $statusCode = 302, array $headers = [])
+    {
+    }
+
+    /**
+     * @return string
+     */
+    public function getUrl()
+    {
+    }
+}

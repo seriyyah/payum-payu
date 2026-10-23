@@ -1,0 +1,123 @@
+<?php
+
+namespace Payum\Core\Request;
+
+abstract class Generic
+{
+    /**
+     * @param mixed $model
+     */
+    public function __construct($model)
+    {
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getModel()
+    {
+    }
+
+    /**
+     * @param mixed $model
+     *
+     * @return void
+     */
+    public function setModel($model)
+    {
+    }
+
+    /**
+     * @return \Payum\Core\Security\TokenInterface|null
+     */
+    public function getToken()
+    {
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstModel()
+    {
+    }
+}
+
+class Convert
+{
+    /**
+     * @param mixed $source
+     * @param string $to
+     */
+    public function __construct($source, $to, ?\Payum\Core\Security\TokenInterface $token = null)
+    {
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSource()
+    {
+    }
+
+    /**
+     * @return string
+     */
+    public function getTo()
+    {
+    }
+
+    /**
+     * @return \Payum\Core\Security\TokenInterface|null
+     */
+    public function getToken()
+    {
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResult()
+    {
+    }
+
+    /**
+     * @param mixed $result
+     *
+     * @return void
+     */
+    public function setResult($result)
+    {
+    }
+}
+
+class GetHttpRequest
+{
+    /** @var array<string, mixed> */
+    public $query;
+
+    /** @var array<string, mixed> */
+    public $request;
+
+    /** @var string */
+    public $method;
+
+    /** @var string */
+    public $uri;
+
+    /** @var string */
+    public $clientIp;
+
+    /** @var string */
+    public $userAgent;
+
+    /** @var string */
+    public $content;
+}
+
+interface GetStatusInterface
+{
+    /**
+     * @return mixed
+     */
+    public function getModel();
+}

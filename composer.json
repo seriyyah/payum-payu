@@ -1,0 +1,124 @@
+{
+    "name": "payum-payu/payum-payu",
+    "description": "PayU (REST API 2.1) gateway for Payum: hosted checkout, card-token recurring payments, signed notifications, refunds and cancellation.",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "payum",
+        "payu",
+        "payment",
+        "gateway",
+        "recurring",
+        "psr-18"
+    ],
+    "authors": [
+        {
+            "name": "Serhii Puzikov",
+            "email": "puzikov.dev@gmail.com",
+            "role": "Creator"
+        }
+    ],
+    "homepage": "https://github.com/payum-payu/payum-payu",
+    "require": {
+        "php": "^8.2",
+        "ext-json": "*",
+        "payum/core": "^1.7.7",
+        "php-http/discovery": "^1.20",
+        "psr/clock": "^1.0",
+        "psr/http-client": "^1.0",
+        "psr/http-factory": "^1.0",
+        "psr/http-message": "^1.1 || ^2.0"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "ergebnis/composer-normalize": "^2.47",
+        "icanhazstring/composer-unused": "^0.9",
+        "infection/infection": "^0.29 || ^0.35",
+        "maglnet/composer-require-checker": "^4.7",
+        "nyholm/psr7": "^1.8",
+        "payum/payum-bundle": "^2.6",
+        "phpstan/extension-installer": "^1.4",
+        "phpstan/phpstan": "^2.1",
+        "phpstan/phpstan-deprecation-rules": "^2.0",
+        "phpstan/phpstan-phpunit": "^2.0",
+        "phpstan/phpstan-strict-rules": "^2.0",
+        "phpunit/phpunit": "^11.5 || ^12.5 || ^13.0",
+        "rector/rector": "^2.3",
+        "slevomat/coding-standard": "^8.16",
+        "squizlabs/php_codesniffer": "^3.13 || ^4.0",
+        "symfony/config": "^6.4 || ^7.0 || ^8.0",
+        "symfony/dependency-injection": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-client": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-foundation": "^6.4 || ^7.0 || ^8.0",
+        "symfony/http-kernel": "^6.4 || ^7.0 || ^8.0"
+    },
+    "suggest": {
+        "nyholm/psr7": "Lightweight PSR-7/PSR-17 implementation picked up automatically",
+        "payum/payum-bundle": "Required to use the bundled Symfony integration",
+        "symfony/http-client": "PSR-18 client via Symfony\\Component\\HttpClient\\Psr18Client (disable redirects, see docs)"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "PayumPayU\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "PayumPayU\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "infection/extension-installer": true,
+            "php-http/discovery": false,
+            "phpstan/extension-installer": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "check": [
+            "@cs",
+            "@stan",
+            "@test",
+            "@deps",
+            "@normalize"
+        ],
+        "ci": [
+            "@check",
+            "@coverage",
+            "@mutation",
+            "@rector"
+        ],
+        "coverage": [
+            "phpunit --coverage-clover build/coverage/clover.xml --coverage-html build/coverage/html --log-junit build/junit.xml",
+            "@php tools/coverage-check.php build/coverage/clover.xml 100"
+        ],
+        "cs": "phpcs",
+        "cs:fix": "phpcbf",
+        "deps": [
+            "composer-require-checker check",
+            "composer-unused"
+        ],
+        "mutation": "infection --threads=max --show-mutations",
+        "normalize": "@composer normalize --dry-run --diff",
+        "rector": "rector --dry-run",
+        "rector:fix": "rector",
+        "stan": "phpstan analyse --memory-limit=1G",
+        "test": "phpunit"
+    },
+    "scripts-descriptions": {
+        "check": "Code style, static analysis, tests and dependency checks",
+        "ci": "Everything the CI pipeline runs, including coverage gate and mutation testing",
+        "coverage": "Tests with coverage reports, fails below 100 percent (needs Xdebug or pcov)",
+        "mutation": "Mutation testing with Infection"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-dev": "1.x-dev"
+        }
+    }
+}

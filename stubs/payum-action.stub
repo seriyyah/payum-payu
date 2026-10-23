@@ -1,0 +1,20 @@
+<?php
+
+namespace Payum\Core\Action;
+
+interface ActionInterface
+{
+    /**
+     * @param mixed $request
+     *
+     * @return void
+     */
+    public function execute($request);
+
+    /**
+     * @param mixed $request
+     *
+     * @return bool
+     */
+    public function supports($request);
+}

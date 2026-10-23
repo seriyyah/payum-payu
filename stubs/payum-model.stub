@@ -1,0 +1,44 @@
+<?php
+
+namespace Payum\Core\Model;
+
+interface DetailsAggregateInterface
+{
+    /**
+     * @return mixed
+     */
+    public function getDetails();
+}
+
+interface PaymentInterface
+{
+    /**
+     * @return string
+     */
+    public function getNumber();
+
+    /**
+     * @return string
+     */
+    public function getDescription();
+
+    /**
+     * @return string
+     */
+    public function getClientEmail();
+
+    /**
+     * @return string
+     */
+    public function getClientId();
+
+    /**
+     * @return int
+     */
+    public function getTotalAmount();
+
+    /**
+     * @return string
+     */
+    public function getCurrencyCode();
+}

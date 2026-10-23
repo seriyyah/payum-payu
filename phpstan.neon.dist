@@ -1,0 +1,33 @@
+parameters:
+    level: 10
+    paths:
+        - src
+        - tests
+        - tools
+    tmpDir: .phpstan-cache
+    stubFiles:
+        - stubs/payum-core.stub
+        - stubs/payum-spl.stub
+        - stubs/payum-request.stub
+        - stubs/payum-security.stub
+        - stubs/payum-model.stub
+        - stubs/payum-reply.stub
+        - stubs/payum-exception.stub
+        - stubs/payum-action.stub
+    checkUninitializedProperties: true
+    checkBenevolentUnionTypes: true
+    checkExplicitMixedMissingReturn: true
+    reportAnyTypeWideningInVarTag: true
+    reportPossiblyNonexistentConstantArrayOffset: true
+    treatPhpDocTypesAsCertain: false
+    ignoreErrors:
+        # Payum deprecates GenericTokenFactoryInterface (since 1.3.7) yet still injects it through
+        # GenericTokenFactoryAwareInterface and ships no replacement; every Payum gateway depends on it.
+        -
+            identifier: method.deprecatedInterface
+            path: src/Action/CreateOrderAction.php
+        -
+            identifiers:
+                - parameter.deprecatedInterface
+                - return.deprecatedInterface
+            path: src/Action/TokenFactoryAwareTrait.php

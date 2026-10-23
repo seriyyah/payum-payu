@@ -1,0 +1,28 @@
+{
+    "$schema": "vendor/infection/infection/resources/schema.json",
+    "source": {
+        "directories": ["src"]
+    },
+    "timeout": 10,
+    "tmpDir": ".infection-cache",
+    "logs": {
+        "text": "build/infection/infection.log",
+        "summary": "build/infection/summary.log",
+        "html": "build/infection/infection.html",
+        "stryker": {
+            "report": "main"
+        }
+    },
+    "mutators": {
+        "@default": true,
+        // json_decode depth and the status ranks only matter relative to each other; shifting them by one is harmless.
+        "IncrementInteger": {
+            "ignore": ["PayumPayU\\Json\\Document::fromJson", "PayumPayU\\Model\\OrderStatus::rank"]
+        },
+        "DecrementInteger": {
+            "ignore": ["PayumPayU\\Json\\Document::fromJson", "PayumPayU\\Model\\OrderStatus::rank"]
+        }
+    },
+    "minMsi": 100,
+    "minCoveredMsi": 100
+}

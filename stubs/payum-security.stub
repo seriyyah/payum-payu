@@ -1,0 +1,47 @@
+<?php
+
+namespace Payum\Core\Security;
+
+interface TokenInterface
+{
+    /**
+     * @return string
+     */
+    public function getHash();
+
+    /**
+     * @return string
+     */
+    public function getTargetUrl();
+
+    /**
+     * @return string
+     */
+    public function getAfterUrl();
+
+    /**
+     * @return string
+     */
+    public function getGatewayName();
+}
+
+interface GenericTokenFactoryInterface
+{
+    /**
+     * @param string $gatewayName
+     * @param mixed $model
+     * @param string $afterPath
+     * @param array<string, mixed> $afterParameters
+     *
+     * @return TokenInterface
+     */
+    public function createCaptureToken($gatewayName, $model, $afterPath, array $afterParameters = []);
+
+    /**
+     * @param string $gatewayName
+     * @param mixed $model
+     *
+     * @return TokenInterface
+     */
+    public function createNotifyToken($gatewayName, $model = null);
+}

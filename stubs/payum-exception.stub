@@ -1,0 +1,19 @@
+<?php
+
+namespace Payum\Core\Exception;
+
+class InvalidArgumentException extends \InvalidArgumentException
+{
+}
+
+class RequestNotSupportedException extends InvalidArgumentException
+{
+    /**
+     * @param mixed $request
+     *
+     * @return static
+     */
+    public static function createActionNotSupported(\Payum\Core\Action\ActionInterface $action, $request)
+    {
+    }
+}

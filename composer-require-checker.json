@@ -1,0 +1,14 @@
+{
+    "symbol-whitelist": [
+        "Symfony\\Component\\DependencyInjection\\ContainerBuilder",
+        "Symfony\\Component\\DependencyInjection\\Loader\\Configurator\\ContainerConfigurator",
+        "Symfony\\Component\\DependencyInjection\\Loader\\Configurator\\ReferenceConfigurator",
+        "Symfony\\Component\\DependencyInjection\\Loader\\Configurator\\service",
+        "Symfony\\Component\\HttpClient\\HttpClient",
+        "Symfony\\Component\\HttpClient\\Psr18Client",
+        "Symfony\\Component\\HttpFoundation\\RequestStack",
+        "Symfony\\Component\\HttpKernel\\Bundle\\AbstractBundle",
+        "Symfony\\Contracts\\HttpClient\\HttpClientInterface"
+    ],
+    "scan-files": []
+}

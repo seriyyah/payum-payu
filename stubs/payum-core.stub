@@ -1,0 +1,66 @@
+<?php
+
+namespace Payum\Core;
+
+interface GatewayInterface
+{
+    /**
+     * @param mixed $request
+     * @param bool $catchReply
+     *
+     * @return \Payum\Core\Reply\ReplyInterface|null
+     */
+    public function execute($request, $catchReply = false);
+}
+
+interface GatewayFactoryInterface
+{
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return GatewayInterface
+     */
+    public function create(array $config = []);
+
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return array<string, mixed>
+     */
+    public function createConfig(array $config = []);
+}
+
+class GatewayFactory implements GatewayFactoryInterface
+{
+    /**
+     * @param array<string, mixed> $defaultConfig
+     */
+    public function __construct(array $defaultConfig = [], ?GatewayFactoryInterface $coreGatewayFactory = null)
+    {
+    }
+
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return GatewayInterface
+     */
+    public function create(array $config = [])
+    {
+    }
+
+    /**
+     * @param array<string, mixed> $config
+     *
+     * @return array<string, mixed>
+     */
+    public function createConfig(array $config = [])
+    {
+    }
+
+    /**
+     * @return void
+     */
+    protected function populateConfig(\Payum\Core\Bridge\Spl\ArrayObject $config)
+    {
+    }
+}

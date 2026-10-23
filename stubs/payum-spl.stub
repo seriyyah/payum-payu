@@ -1,0 +1,46 @@
+<?php
+
+namespace Payum\Core\Bridge\Spl;
+
+/**
+ * @extends \ArrayObject<string, mixed>
+ */
+class ArrayObject extends \ArrayObject
+{
+    /**
+     * @param array<string, mixed>|\Traversable<string, mixed> $input
+     *
+     * @return void
+     */
+    public function defaults($input)
+    {
+    }
+
+    /**
+     * @param list<string> $required
+     * @param bool $throwOnInvalid
+     *
+     * @return bool
+     */
+    public function validateNotEmpty($required, $throwOnInvalid = true)
+    {
+    }
+
+    /**
+     * @param string $index
+     *
+     * @return mixed
+     */
+    public function offsetGet($index)
+    {
+    }
+
+    /**
+     * @param mixed $input
+     *
+     * @return static
+     */
+    public static function ensureArrayObject($input)
+    {
+    }
+}

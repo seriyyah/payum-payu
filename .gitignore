@@ -1,0 +1,10 @@
+/vendor/
+/composer.lock
+/tools/composer.phar
+/.phpunit.cache/
+/.phpcs-cache
+/.phpstan-cache/
+/.infection-cache/
+/.scannerwork/
+/build/
+/.idea/
