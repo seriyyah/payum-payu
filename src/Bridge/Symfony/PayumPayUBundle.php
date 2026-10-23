@@ -63,7 +63,7 @@ final class PayumPayUBundle extends AbstractBundle
         $services = $container->services();
 
         $services->set(self::SERVICE_SYMFONY_HTTP_CLIENT, HttpClientInterface::class)
-            ->factory(HttpClient::create(...))
+            ->factory([HttpClient::class, 'create'])
             ->args([[
                 'max_redirects' => 0,
             ]]);

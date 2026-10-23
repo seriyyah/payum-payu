@@ -63,6 +63,7 @@ final class PayumPayUBundleTest extends TestCase
         $container = new ContainerBuilder();
         $container->setParameter('kernel.environment', 'test');
         $container->setParameter('kernel.debug', true);
+        $container->setParameter('kernel.build_dir', sys_get_temp_dir());
         $container->register('request_stack', RequestStack::class);
         $extension = $bundle->getContainerExtension();
         self::assertNotNull($extension);
