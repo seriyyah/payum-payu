@@ -23,7 +23,7 @@ jobs:
         with:
           php-version: '8.4'
           coverage: none
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
       - run: composer validate --strict
       - run: composer normalize --dry-run --diff
       - run: vendor/bin/phpcs
@@ -50,7 +50,7 @@ jobs:
         with:
           php-version: ${{ matrix.php }}
           coverage: none
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
         with:
           dependency-versions: ${{ matrix.dependencies }}
       - run: vendor/bin/phpunit
@@ -64,7 +64,7 @@ jobs:
         with:
           php-version: '8.4'
           coverage: xdebug
-      - uses: ramsey/composer-install@v3
+      - uses: ramsey/composer-install@v4
       - run: composer coverage
       - run: vendor/bin/infection --threads=max --no-progress --logger-github
       - uses: actions/upload-artifact@v7
