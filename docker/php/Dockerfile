@@ -1,5 +1,5 @@
 # Test and quality toolchain for payum-payu. Not a runtime image.
-FROM php:8.4-cli-alpine
+FROM php:8.5-cli-alpine
 
 ARG UID=1000
 ARG GID=1000
